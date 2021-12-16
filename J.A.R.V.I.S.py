@@ -56,6 +56,9 @@ def activate_va():
 
     elif 'Who are you?' in user_query:
         speak_va("I am Sir's Assistant")
+    
+    elif 'created' in user_query:
+        speak_va('I am created by Nandu, Pavan and Siddharth')
 
     elif 'sir' in user_query:
         speak_va('He is my God')
