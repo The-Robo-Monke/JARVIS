@@ -37,4 +37,4 @@ def make_request(url):
   return response.text
 
 while True:
-    implementation.activate_va(input_query, report_time, speak_va)
+    implementation.implement_va(input_query, report_time, speak_va)
