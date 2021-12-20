@@ -2,10 +2,15 @@ import webbrowser
 import wikipedia
 import pyjokes
 import pyautogui
+import datetime
 
-def implement_va(input_query, report_time, speak_va):
+def implement_va(input_query, speak_va):
     user_query = input_query()
     print('user query ....', user_query)
+
+    def report_time():
+        current_time = datetime.datetime.now().strftime('%I:%M %p')
+        return current_time
 
     if 'close' in user_query or 'exit' in user_query:
         exit()

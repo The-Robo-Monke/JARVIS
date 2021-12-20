@@ -1,6 +1,5 @@
 import speech_recognition as sr
 import pyttsx3
-import datetime
 import requests
 import implementation
 
@@ -22,11 +21,6 @@ def input_query():
             print('An exception occurred', ex)
 
 
-def report_time():
-    current_time = datetime.datetime.now().strftime('%I:%M %p')
-    return current_time
-
-
 def speak_va(transcribed_query):
     engine.say(transcribed_query)
     engine.runAndWait()
@@ -37,4 +31,4 @@ def make_request(url):
   return response.text
 
 while True:
-    implementation.implement_va(input_query, report_time, speak_va)
+    implementation.implement_va(input_query, speak_va)
