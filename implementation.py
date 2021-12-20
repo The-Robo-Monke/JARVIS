@@ -15,6 +15,9 @@ def implement_va(input_query, report_time, speak_va):
         print(f"the current time is {current_time}")
         speak_va(f"the current time is {current_time}")
 
+    elif 'hi' in user_query or 'hello' in user_query:
+        speak_va("Greetings")
+
     elif 'what is your name' in user_query:
         speak_va("I am Jarvis")
 
