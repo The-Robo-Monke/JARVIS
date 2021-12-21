@@ -31,4 +31,8 @@ def make_request(url):
   return response.text
 
 while True:
-    implementation.implement_va(input_query, speak_va)
+    try:
+        implementation.implement_va(input_query, speak_va)
+    except:
+        print("Voice module failed")
+        break

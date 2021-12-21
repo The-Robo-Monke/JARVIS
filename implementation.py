@@ -3,6 +3,7 @@ import wikipedia
 import pyjokes
 import pyautogui
 import datetime
+import random
 
 def implement_va(input_query, speak_va):
     user_query = input_query()
@@ -63,6 +64,17 @@ def implement_va(input_query, speak_va):
         search_url = f"https://www.google.com/search?q={search_term}"
         webbrowser.open(search_url)
         speak_va(f"here are the results for the search term: {search_term}")
+
+    elif 'lets play a game' or 'let us play a game' or 'i wanna play a game' in user_query:
+        game_num = random.randint(1, 3)
+        if game_num == 1:
+            import games.snake
+        elif game_num == 2:
+            import games.tetris
+        elif game_num == 3:
+            import games.minesweeper.minesweeper_game
+        else:
+            import games.spaceshooter.spaceShooter
 
     else:
         speak_va("This is not implemented yet. Searching on google...");
