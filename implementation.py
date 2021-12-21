@@ -65,7 +65,7 @@ def implement_va(input_query, speak_va):
         webbrowser.open(search_url)
         speak_va(f"here are the results for the search term: {search_term}")
 
-    elif 'lets play a game' or 'let us play a game' or 'i wanna play a game' in user_query:
+    elif 'lets play a game' or 'let us play a game' or 'i wanna play a game' or 'i want to play a game' or 'i wanna play game' or 'i want to play game' in user_query:
         game_num = random.randint(1, 3)
         if game_num == 1:
             import games.snake
@@ -75,6 +75,18 @@ def implement_va(input_query, speak_va):
             import games.minesweeper.minesweeper_game
         else:
             import games.spaceshooter.spaceShooter
+
+    elif 'snake game' or 'i want to play snake' or 'i want to play snake game' or 'i wanna play snake' or 'i wanna play snake game' in user_query:
+        import games.snake
+
+    elif 'minesweeper' or 'i want to play minesweeper' or 'i wanna play minesweeper' in user_query:
+        import games.minesweeper.minesweeper_game
+    
+    elif 'tetris' or 'i want to play tetris' or 'i wanna play tetris' in user_query:
+        import games.tetris
+
+    elif 'space shooter' or 'i want to play space shooter' or 'i wanna play space shooter' or 'i want to play space game' or 'i wanna play space game' in user_query:
+        import games.minesweeper.minesweeper_game
 
     else:
         speak_va("This is not implemented yet. Searching on google...");
